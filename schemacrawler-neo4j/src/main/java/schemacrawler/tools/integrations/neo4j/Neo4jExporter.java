@@ -63,14 +63,17 @@ public class Neo4jExporter
 
     try (final Transaction tx = dbService.beginTx())
     {
-      final Map<String, Object> config = new HashMap<>();
-      config.put("export.file.enabled", "true");
-      ApocConfiguration.addToConfig(config);
+      final Map<String, Object> apocConfig = new HashMap<>();
+      apocConfig.put("export.file.enabled", "true");
+      ApocConfiguration.addToConfig(apocConfig);
+
+      final Map<String, Object> exportConfig = new HashMap<>();
+      exportConfig.put("stream", "false");
 
       final String outputFilename = outputFile.toAbsolutePath().toString();
 
       final ExportCypher exportCypher = new ExportCypher(dbService);
-      exportCypher.all(outputFilename, config).count();
+      exportCypher.all(outputFilename, exportConfig).count();
 
       tx.success();
     }

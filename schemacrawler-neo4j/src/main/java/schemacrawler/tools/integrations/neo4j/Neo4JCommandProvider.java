@@ -61,17 +61,17 @@ public class Neo4JCommandProvider
   @Override
   public Collection<String> getSupportedCommands()
   {
-    return Arrays.asList(Neo4JRenderer.COMMAND);
+    return Arrays.asList(Neo4JCommand.COMMAND);
   }
 
   @Override
   public SchemaCrawlerCommand newSchemaCrawlerCommand(final String command)
   {
-    if (!Neo4JRenderer.COMMAND.equals(command))
+    if (!Neo4JCommand.COMMAND.equals(command))
     {
       throw new IllegalArgumentException("Cannot support command, " + command);
     }
-    final Neo4JRenderer scCommand = new Neo4JRenderer();
+    final Neo4JCommand scCommand = new Neo4JCommand();
     return scCommand;
   }
 
@@ -80,7 +80,7 @@ public class Neo4JCommandProvider
                                               final SchemaCrawlerOptions schemaCrawlerOptions,
                                               final OutputOptions outputOptions)
   {
-    return Neo4JRenderer.COMMAND.equals(command);
+    return Neo4JCommand.COMMAND.equals(command);
   }
 
 }

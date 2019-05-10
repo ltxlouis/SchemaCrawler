@@ -38,16 +38,16 @@ import schemacrawler.tools.executable.BaseSchemaCrawlerCommand;
 import schemacrawler.tools.traversal.SchemaTraversalHandler;
 import schemacrawler.tools.traversal.SchemaTraverser;
 
-public class Neo4JRenderer
+public class Neo4JCommand
   extends BaseSchemaCrawlerCommand
 {
 
   static final String COMMAND = "neo4j";
 
   private static final Logger LOGGER = Logger
-    .getLogger(Neo4JRenderer.class.getName());
+    .getLogger(Neo4JCommand.class.getName());
 
-  protected Neo4JRenderer()
+  protected Neo4JCommand()
   {
     super(COMMAND);
   }
