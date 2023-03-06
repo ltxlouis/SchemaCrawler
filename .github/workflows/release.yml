@@ -18,7 +18,7 @@ jobs:
 # SETUP BUILD ENVIRONMENT
     - id: prepare-maven-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.2.1
+      uses: sualeh/prepare-maven-build@8b442ea082e93cc5c0f6ee6b8838366369f00cee
       with:
         java-version: 8
     - id: install-packages
